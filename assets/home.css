@@ -117,7 +117,7 @@ html[lang=ru] .project-title{font-size:clamp(32px,3.8vw,64px);letter-spacing:-.0
 .screen-frame{display:block;padding:9px;border:1px solid #573c78;border-radius:14px;background:#08070b;box-shadow:0 35px 70px rgba(0,0,0,.45)}
 .screen-frame img,.phone-frame img{display:block;width:100%;height:auto}
 .streaming-tv{align-self:center}
-.streaming-phone{max-width:230px;justify-self:center;border-color:#5d4379}
+.streaming-phone{width:100%;max-width:230px;justify-self:center;border-color:#5d4379}
 .phone-frame{display:block;padding:7px;border:1px solid #70558c;border-radius:27px;background:#0b0b11;box-shadow:0 28px 58px rgba(0,0,0,.38)}
 .phone-frame img{border-radius:21px}
 .catalog-strip{display:grid;grid-template-columns:minmax(0,.35fr) minmax(0,1fr);gap:26px;align-items:center;margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
@@ -162,7 +162,7 @@ html[lang=ru] .project-title{font-size:clamp(32px,3.8vw,64px);letter-spacing:-.0
 .signal-flow li strong{font-size:17px;font-weight:700}
 .crypto-detail{max-width:56ch;margin-top:24px;color:var(--muted);font-size:16px}
 .crypto-code{display:flex;flex-wrap:wrap;gap:16px;margin-top:26px}
-.crypto-shot{max-width:540px;justify-self:end}
+.crypto-shot{width:100%;max-width:540px;justify-self:end}
 .crypto-shot .screen-frame{border-color:#66517e}
 .crypto-shot figcaption{margin-top:11px;color:var(--soft);font:500 11px/1.4 'IBM Plex Mono',monospace}
 .capabilities{padding:var(--section) 0;background:#130a23}

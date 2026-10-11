@@ -22,6 +22,22 @@ npm run preview
 
 Deploy the contents of `dist/` to any static web host. Fonts and images are bundled; the site needs no backend or external CDN.
 
+## Images
+
+All 13 images use responsive WebP sources. The hero loads with high priority; project screenshots load lazily and decode asynchronously. Tiny previews embedded in `assets/image-previews.css` fill the reserved image area while the full image loads, including with JavaScript disabled. Explicit frame widths prevent lazy images from collapsing and moving nearby content.
+
+Original PNGs remain in `assets/` for editing and are excluded from the production build. After replacing a source PNG, install libwebp's `cwebp` command and run:
+
+```sh
+npm run images
+npm run check
+npm run build
+```
+
+This regenerates WebP sizes, preview CSS, and image attributes. Generated files are committed, so normal development and builds require no image tools. If a layout changes, update the widths and fallback `sizes` in `scripts/optimize-images.mjs`; lazy images use `sizes="auto"` where supported to match their actual rendered width.
+
+See [the image audit](docs/image-audit.md) for dimensions, transfer sizes, and browser verification.
+
 ## Language links
 
 Use `?lang=ru` to open directly in Russian or `?lang=en` for English. Combine this with any section anchor, for example:
