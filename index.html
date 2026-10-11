@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d0618">
+  <meta name="description" content="Alibek Kapan — software engineer in Astana. Commercial Flutter and Android TV expertise, full-stack product development, and AI integrations. Explore the engineering behind real products.">
+  <title>Alibek Kapan — Software Engineer</title>
+  <style>
+    /* OD-LAYOUT-PRIMITIVES v1 — structure only: display, flex/grid, overflow, wrapping, ratio.
+       Put this @layer first; product CSS outside the layer always wins. */
+    @layer od-layout {
+      :where(.od-stack,.od-row,.od-row-top,.od-cluster,.od-grid,.od-field,.od-stat,.od-cell,.od-tile) > :where(*) { min-width: 0; }
+      .od-stack   { display: flex; flex-direction: column; gap: var(--od-gap, 8px); }
+      .od-row     { display: flex; align-items: center; gap: var(--od-gap, 8px); }
+      .od-row-top { display: flex; align-items: flex-start; gap: var(--od-gap, 8px); }
+      .od-cluster { display: flex; flex-wrap: wrap; align-items: center; gap: var(--od-gap, 8px); }
+      .od-fill    { flex: 1 1 0; min-width: 0; }
+      .od-fixed   { flex: none; }
+      .od-grid    { display: grid; gap: var(--od-gap, 12px); grid-template-columns: repeat(var(--od-cols, 3), minmax(0, 1fr)); }
+      .od-stat, .od-field, .od-cell { display: grid; gap: var(--od-gap, 2px); }
+      :where(.od-stat,.od-field,.od-cell) > :where(*) { display: block; }
+      .od-tile { display: grid; grid-template-rows: auto 1fr; }
+      :where(.od-tile) > :where(*) { display: block; }
+      .od-media { display: block; width: 100%; height: auto; }
+      .od-media-cover { object-fit: cover; }
+      .od-truncate { display: block; max-width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+      .od-clamp-2, .od-clamp-3 { display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; }
+      .od-clamp-2 { -webkit-line-clamp: 2; }
+      .od-clamp-3 { -webkit-line-clamp: 3; }
+      .od-lines-2 { min-height: calc(2 * 1.4em); }
+      .od-nowrap  { white-space: nowrap; }
+      .od-keep    { word-break: keep-all; overflow-wrap: anywhere; }
+      .od-screen { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; height: 100%; }
+      .od-scroll { overflow-y: auto; overscroll-behavior: contain; min-height: 0; }
+      .od-rail { display: flex; gap: var(--od-gap, 8px); overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none;
+                 padding-inline: var(--od-rail-pad, 16px); scroll-padding-inline: var(--od-rail-pad, 16px); }
+      .od-rail::-webkit-scrollbar { display: none; }
+      :where(.od-rail) > :where(*) { flex: none; scroll-snap-align: start; }
+      :where(.od-rail) > :where(:last-child) { margin-inline-end: var(--od-rail-pad, 16px); }
+      .od-spacer { flex: none; visibility: hidden; pointer-events: none; }
+      .od-touch  { min-width: 44px; min-height: 44px; }
+    }
+    /* /OD-LAYOUT-PRIMITIVES v1 */
+  </style>
+  <link rel="stylesheet" href="assets/base.css">
+  <link rel="stylesheet" href="assets/home.css">
+  <script src="assets/home.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skipContent">Skip to content</a>
+  <header class="site-header">
+    <a class="site-mark" href="#top" aria-label="Alibek Kapan — top" data-i18n-aria="topLabel">AK<span>✳</span></a>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-i18n-aria="navLabel" data-site-nav>
+      <a href="#work" data-i18n="navWork">Work</a>
+      <a href="#capabilities" data-i18n="navCapabilities">Capabilities</a>
+      <a href="#about" data-i18n="navAbout">About</a>
+      <a href="#contact" data-i18n="navContact">Contact</a>
+    </nav>
+    <div class="header-end">
+      <span class="header-availability"><span class="availability-dot" aria-hidden="true"></span><span data-i18n="availability">Available for opportunities</span></span>
+      <div class="lang-switch" role="group" aria-label="Language" data-i18n-aria="languageLabel">
+        <button type="button" data-lang="en" aria-pressed="true"><span>EN</span></button>
+        <button type="button" data-lang="ru" aria-pressed="false"><span>RU</span></button>
+      </div>
+      <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu" data-menu-toggle><span aria-hidden="true"></span></button>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div class="hero-copy" data-reveal>
+            <span class="eyebrow" data-i18n="heroEyebrow">ALIBEK KAPAN / SOFTWARE ENGINEER</span>
+            <h1 class="hero-title display"><span data-i18n="heroLineOne">Beyond the</span><span data-i18n="heroLineTwo">interface.</span><span class="hero-accent" data-i18n="heroLineThree">Into real products.</span></h1>
+            <p class="hero-lead" data-i18n="heroLead">Flutter expertise. Full-stack thinking. I connect thoughtful interfaces to the engineering that makes them work.</p>
+            <div class="hero-actions"><a class="button-link solid" href="#work"><span data-i18n="heroWork">Explore my work</span><span class="arrow" aria-hidden="true">↗</span></a><a class="text-link" href="#contact" data-i18n="heroTalk">Let's talk</a></div>
+          </div>
+          <div class="hero-portrait" data-reveal>
+            <div class="portrait-halo" aria-hidden="true"></div>
+            <img class="portrait-image" src="assets/portrait.png" width="1254" height="1254" alt="Professional portrait of Alibek Kapan" data-i18n-alt="heroPortraitAlt" fetchpriority="high">
+          </div>
+        </div>
+        <div class="hero-bottom"><span data-i18n="heroLocation">ASTANA, KAZAKHSTAN</span><span data-i18n="heroScroll">SCROLL INTO THE WORK</span><span>01 / 06</span></div>
+      </div>
+    </section>
+    <section class="impact" id="impact" aria-label="Product impact" data-i18n-aria="impactLabel">
+      <div class="wrap">
+        <div class="impact-grid">
+          <div class="impact-item od-stat"><strong class="impact-number">4+</strong><span class="impact-caption" data-i18n="metricYears">years of professional engineering</span></div>
+          <div class="impact-item od-stat"><strong class="impact-number">350K+</strong><span class="impact-caption" data-i18n="metricRegistered">registered users of a streaming product</span></div>
+          <div class="impact-item od-stat"><strong class="impact-number">80K+</strong><span class="impact-caption" data-i18n="metricActive">monthly active users of that product</span></div>
+          <div class="impact-item od-stat"><strong class="impact-number">10K+</strong><span class="impact-caption" data-i18n="metricRestaurants">restaurants on a reservation platform</span></div>
+        </div>
+        <p class="impact-note" data-i18n="metricNote">Audience and catalog figures reflect the scale of commercial products built in teams.</p>
+      </div>
+    </section>
+    <section class="orbit-section" id="orbit">
+      <div class="wrap">
+        <div class="orbit-intro" data-reveal>
+          <span class="eyebrow" data-i18n="orbitEyebrow">ENGINEERING ORBIT</span>
+          <h2 class="section-heading display" data-i18n="orbitTitle">Connected thinking. Working products.</h2>
+          <p class="section-lead" data-i18n="orbitLead">Every technology has a job to do. Follow the connections from engineering decisions to real products.</p>
+        </div>
+        <div class="orbit-map" data-orbit-map role="group" aria-label="Technology and project map" data-i18n-aria="orbitLabel">
+          <div class="orbit-aura" aria-hidden="true"></div>
+          <svg class="orbit-paths" viewBox="0 0 800 560" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+            <ellipse class="orbit-track" cx="400" cy="280" rx="304" ry="166" transform="rotate(-14 400 280)"/>
+            <ellipse class="orbit-track inner" cx="400" cy="280" rx="270" ry="216" transform="rotate(23 400 280)"/>
+            <ellipse class="orbit-track" cx="400" cy="280" rx="340" ry="110" transform="rotate(-24 400 280)"/>
+            <path class="orbit-channel is-active" data-orbit-channel="flutter" d="M400 280 160 52"/>
+            <path class="orbit-channel" data-orbit-channel="hls" d="M400 280 640 52"/>
+            <path class="orbit-channel" data-orbit-channel="django" d="M400 280 712 280"/>
+            <path class="orbit-channel" data-orbit-channel="ai" d="M400 280 640 508"/>
+            <path class="orbit-channel" data-orbit-channel="pipelines" d="M400 280 160 508"/>
+            <path class="orbit-channel" data-orbit-channel="websockets" d="M400 280 88 280"/>
+            <g class="orbit-particle" data-orbit-particle transform="translate(695 206)"><circle class="orbit-particle-halo" r="12"/><circle r="3"/></g>
+            <g class="orbit-particle" data-orbit-particle transform="translate(451 505)"><circle class="orbit-particle-halo" r="10"/><circle r="3"/></g>
+            <g class="orbit-particle" data-orbit-particle transform="translate(284 436)"><circle class="orbit-particle-halo" r="12"/><circle r="3"/></g>
+            <g class="orbit-particle" data-orbit-particle transform="translate(105 354)"><circle class="orbit-particle-halo" r="12"/><circle r="3"/></g>
+            <g class="orbit-particle" data-orbit-particle transform="translate(349 55)"><circle class="orbit-particle-halo" r="10"/><circle r="3"/></g>
+            <g class="orbit-particle" data-orbit-particle transform="translate(516 124)"><circle class="orbit-particle-halo" r="12"/><circle r="3"/></g>
+            <g class="orbit-particle" data-orbit-signal transform="translate(244 132)"><circle class="orbit-particle-halo" r="16"/><circle r="4"/></g>
+          </svg>
+          <button class="orbit-node" type="button" data-tech="flutter" aria-pressed="true" aria-controls="orbit-insight">Flutter</button>
+          <button class="orbit-node" type="button" data-tech="hls" aria-pressed="false" aria-controls="orbit-insight">HLS / TV</button>
+          <button class="orbit-node" type="button" data-tech="django" aria-pressed="false" aria-controls="orbit-insight">Django</button>
+          <button class="orbit-node" type="button" data-tech="ai" aria-pressed="false" aria-controls="orbit-insight"><span data-i18n="orbitAi">AI / OCR</span></button>
+          <button class="orbit-node" type="button" data-tech="pipelines" aria-pressed="false" aria-controls="orbit-insight"><span data-i18n="orbitData">Data</span></button>
+          <button class="orbit-node" type="button" data-tech="websockets" aria-pressed="false" aria-controls="orbit-insight">WebSockets</button>
+          <div class="orbit-core" aria-hidden="true"><div><b>AK</b><span data-i18n="orbitCore">PRODUCT ENGINEERING</span></div></div>
+        </div>
+        <div class="orbit-toolbar">
+          <p data-i18n="orbitHint">Choose a technology. Follow it into a product.</p>
+          <button class="orbit-toggle" type="button" data-orbit-toggle aria-pressed="false">
+            <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path class="pause-glyph" d="M5 3v10M11 3v10"/><path class="play-glyph" d="m5 3 8 5-8 5Z"/></svg>
+            <span data-orbit-motion-label>Pause motion</span>
+          </button>
+        </div>
+        <div class="orbit-insight" id="orbit-insight" aria-live="polite" aria-atomic="true">
+          <h3 data-orbit-title>Flutter</h3>
+          <p data-orbit-body>Commercial mobile depth: streaming, restaurant discovery, native integrations, and production delivery. The same craft powers independently built full-stack products.</p>
+          <div><span class="eyebrow" data-i18n="orbitRelated">PROVEN IN THE WORK</span><div class="orbit-projects" data-orbit-projects><a href="#streaming">Streaming Platform ↗</a><a href="#leclick">LeClick ↗</a><a href="#medstory">MedStory ↗</a><a href="#crypto">Crypto Intelligence ↗</a></div></div>
+        </div>
+      </div>
+    </section>
+    <section class="work" id="work">
+      <div class="wrap work-head section-top" data-reveal>
+        <div><span class="eyebrow" data-i18n="workEyebrow">SELECTED WORK / 01—04</span><h2 class="section-heading display" data-i18n="workTitle">Hard problems. Tangible outcomes.</h2></div>
+        <p class="section-lead" data-i18n="workLead">Commercial applications with substantial reach. Independent products built end to end. A closer look at the engineering behind the experience.</p>
+      </div>
+      <article class="project streaming" id="streaming" aria-labelledby="streaming-title">
+        <div class="wrap">
+          <div class="project-head" data-reveal><span class="project-index">01 / 04</span><div><h3 class="project-title" id="streaming-title" data-i18n="streamingTitle">Streaming at scale.</h3><span class="project-type" data-i18n="streamingType">COMMERCIAL PRODUCT / MOBILE &amp; TV</span></div><p class="project-lead" data-i18n="streamingLead">From a phone to the big screen. Mobile and TV engineering for a video product serving 350K+ registered users and 80K+ monthly active users.</p></div>
+          <div class="streaming-stage" data-reveal>
+            <div class="screen-frame streaming-tv"><img class="od-media" src="assets/streaming-tv.png" width="1248" height="696" alt="Authentic TV interface screenshot of the anonymous streaming product" data-i18n-alt="streamingTvAlt" loading="lazy" decoding="async"></div>
+            <div class="phone-frame streaming-phone"><img class="od-media" src="assets/streaming-mobile.png" width="360" height="800" alt="Authentic mobile screen of the anonymous streaming product" data-i18n-alt="streamingMobileAlt" loading="lazy" decoding="async"></div>
+          </div>
+          <div class="catalog-strip"><span data-i18n="streamingCatalog">ONE PRODUCT. THREE WAYS TO WATCH.</span><div class="screen-frame"><img class="od-media" src="assets/streaming-catalog.png" width="2048" height="1026" alt="Authentic web catalog screenshot of the anonymous streaming product" data-i18n-alt="streamingCatalogAlt" loading="lazy" decoding="async"></div></div>
+          <div class="project-foot"><p data-i18n="streamingDetail">Engineered HLS playback, offline downloads spanning 1,000+ video segments, and remote-first Android TV navigation — with native integrations, performance work, and production releases.</p><span class="project-type">FLUTTER · HLS · ANDROID TV</span></div>
+        </div>
+      </article>
+      <article class="project leclick" id="leclick" aria-labelledby="leclick-title">
+        <div class="wrap">
+          <div class="project-head" data-reveal><span class="project-index">02 / 04</span><div><h3 class="project-title" id="leclick-title">LeClick.</h3><span class="project-type" data-i18n="leclickType">COMMERCIAL PRODUCT / FLUTTER / RESERVATIONS</span></div><p class="project-lead" data-i18n="leclickLead">From a first search to a confirmed table. Flutter engineering across the discovery and booking journey for a platform with 10K+ restaurants.</p></div>
+          <div class="leclick-stage">
+            <div class="leclick-story" data-reveal><div class="od-stat"><strong class="leclick-stat">10K+</strong><span class="eyebrow" data-i18n="leclickRestaurants">RESTAURANTS ON THE PLATFORM</span></div><div><p data-i18n="leclickStory">Find a place. Explore the details. Reserve a table. Manage the plans. A complete mobile journey.</p><div class="leclick-steps"><div class="leclick-step"><span>01</span><strong data-i18n="leclickStepOne">Discover</strong></div><div class="leclick-step"><span>02</span><strong data-i18n="leclickStepTwo">Explore</strong></div><div class="leclick-step"><span>03</span><strong data-i18n="leclickStepThree">Reserve</strong></div><div class="leclick-step"><span>04</span><strong data-i18n="leclickStepFour">Manage</strong></div></div></div></div>
+            <div class="leclick-phones od-rail" data-reveal tabindex="0" role="region" aria-label="LeClick screenshots: discovery, map, and bookings" data-i18n-aria="leclickGallery">
+              <figure><div class="phone-frame"><img class="od-media" src="assets/leclick-discover.png" width="785" height="2004" alt="Authentic LeClick restaurant discovery screen" data-i18n-alt="leclickDiscoverAlt" loading="lazy" decoding="async"></div><figcaption data-i18n="leclickDiscoverCaption">DISCOVER</figcaption></figure>
+              <figure><div class="phone-frame"><img class="od-media" src="assets/leclick-map.png" width="852" height="1846" alt="Authentic LeClick restaurant map screen" data-i18n-alt="leclickMapAlt" loading="lazy" decoding="async"></div><figcaption data-i18n="leclickMapCaption">EXPLORE</figcaption></figure>
+              <figure><div class="phone-frame"><img class="od-media" src="assets/leclick-bookings.png" width="853" height="1844" alt="Authentic LeClick booking-management screen" data-i18n-alt="leclickBookingsAlt" loading="lazy" decoding="async"></div><figcaption data-i18n="leclickBookingsCaption">MANAGE</figcaption></figure>
+            </div>
+          </div>
+          <div class="project-foot"><p data-i18n="leclickDetail">Built connected mobile flows across discovery, search, maps, reservations, and booking management. Integrated real-time support, notifications, deep links, and analytics into the commercial Flutter application.</p><span class="project-type">FLUTTER · FIREBASE · WEBSOCKETS</span></div>
+        </div>
+      </article>
+      <article class="project medstory" id="medstory" aria-labelledby="medstory-title">
+        <div class="wrap">
+          <div class="project-head" data-reveal><span class="project-index">03 / 04</span><div><h3 class="project-title" id="medstory-title">MedStory.</h3><span class="project-type" data-i18n="medstoryType">INDEPENDENT PRODUCT / FLUTTER / DJANGO / AI</span></div><p class="project-lead" data-i18n="medstoryLead">One product, engineered end to end: a Flutter app and Django backend that turn scattered medical documents into searchable, source-linked records.</p></div>
+          <div class="medstory-stage">
+            <div class="medstory-aside" data-reveal><strong data-i18n="medstoryPhrase">Every record has a place. And a source.</strong><p data-i18n="medstoryAside">Capture documents or voice notes. Process them in the background. Keep AI-organized records connected to their original sources.</p></div>
+            <div class="medstory-rail od-rail" tabindex="0" role="region" aria-label="MedStory screenshots: capture through visit preparation" data-i18n-aria="medstoryGallery" data-reveal>
+              <figure><div class="phone-frame"><img class="od-media" src="assets/medstory-capture.png" width="1206" height="2622" alt="Authentic MedStory capture screen" data-i18n-alt="medstoryCaptureAlt" loading="lazy" decoding="async"></div><figcaption><span>01</span><strong data-i18n="medstoryCapture">Capture</strong></figcaption></figure>
+              <figure><div class="phone-frame"><img class="od-media" src="assets/medstory-timeline.png" width="1206" height="2622" alt="Authentic MedStory timeline screen" data-i18n-alt="medstoryTimelineAlt" loading="lazy" decoding="async"></div><figcaption><span>02</span><strong data-i18n="medstoryTimeline">Organize</strong></figcaption></figure>
+              <figure><div class="phone-frame"><img class="od-media" src="assets/medstory-detail.png" width="1206" height="2622" alt="Authentic MedStory event-detail screen" data-i18n-alt="medstoryDetailAlt" loading="lazy" decoding="async"></div><figcaption><span>03</span><strong data-i18n="medstoryDetailStep">Trace</strong></figcaption></figure>
+              <figure><div class="phone-frame"><img class="od-media" src="assets/medstory-search.png" width="1206" height="2622" alt="Authentic MedStory search screen" data-i18n-alt="medstorySearchAlt" loading="lazy" decoding="async"></div><figcaption><span>04</span><strong data-i18n="medstorySearch">Retrieve</strong></figcaption></figure>
+              <figure><div class="phone-frame"><img class="od-media" src="assets/medstory-visit.png" width="1206" height="2622" alt="Authentic MedStory visit-preparation screen" data-i18n-alt="medstoryVisitAlt" loading="lazy" decoding="async"></div><figcaption><span>05</span><strong data-i18n="medstoryVisit">Prepare</strong></figcaption></figure>
+            </div>
+          </div>
+          <div class="project-foot"><p data-i18n="medstoryFoot">Independent product · Pre-launch · Screens shown with demo data</p><a class="text-link" href="https://github.com/Lemilli/med_story" target="_blank" rel="noopener noreferrer"><span data-i18n="medstoryGitHub">Explore the code</span><span aria-hidden="true">↗</span></a></div>
+        </div>
+      </article>
+      <article class="project crypto" id="crypto" aria-labelledby="crypto-title">
+        <div class="wrap">
+          <div class="project-head" data-reveal><span class="project-index">04 / 04</span><div><h3 class="project-title" id="crypto-title" data-i18n="cryptoTitle">Crypto Sentiment Intelligence.</h3><span class="project-type" data-i18n="cryptoType">FULL-STACK / PYTHON / DJANGO / DATA</span></div><p class="project-lead" data-i18n="cryptoLead">From raw signals to readable trends. A full-stack data system connecting scheduled collection, sentiment processing, Django APIs, and Flutter visualization.</p></div>
+          <div class="crypto-stage">
+            <div data-reveal><span class="signal-label" data-i18n="cryptoFlow">FROM SOURCE TO INTERFACE</span><ol class="signal-flow"><li><span>01</span><strong data-i18n="cryptoStepOne">Market and social sources</strong></li><li><span>02</span><strong data-i18n="cryptoStepTwo">Scheduled collection</strong></li><li><span>03</span><strong data-i18n="cryptoStepThree">Sentiment classification</strong></li><li><span>04</span><strong data-i18n="cryptoStepFour">History and Django REST APIs</strong></li><li><span>05</span><strong data-i18n="cryptoStepFive">Flutter visualization</strong></li></ol><p class="crypto-detail" data-i18n="cryptoDetail">Designed the path from scheduled collection to historical storage and visualization. Background processing keeps data workflows separate from the interface.</p><div class="crypto-code"><a class="text-link" href="https://github.com/Lemilli/Crypto-Info-Visualization-Server" target="_blank" rel="noopener noreferrer"><span data-i18n="cryptoBackend">Explore the backend</span><span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/Lemilli/Crypto-Info-Visualization" target="_blank" rel="noopener noreferrer"><span data-i18n="cryptoFrontend">Explore the client</span><span aria-hidden="true">↗</span></a></div></div>
+            <figure class="crypto-shot" data-reveal><div class="screen-frame"><img class="od-media" src="assets/crypto-app.png" width="1918" height="3400" alt="Authentic historical screenshot of the cryptocurrency analytics application" data-i18n-alt="cryptoAlt" loading="lazy" decoding="async"></div><figcaption data-i18n="cryptoImageCaption">AUTHENTIC HISTORICAL APPLICATION SCREENSHOT</figcaption></figure>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="capabilities" id="capabilities">
+      <div class="wrap">
+        <div class="capabilities-head" data-reveal>
+          <div><span class="eyebrow" data-i18n="capabilitiesEyebrow">ENGINEERING CAPABILITIES</span><h2 class="section-heading display" data-i18n="capabilitiesTitle">Mobile depth. A whole-system mindset.</h2></div>
+          <p class="section-lead" data-i18n="capabilitiesLead">Commercial Flutter engineering is my foundation. Independent products demonstrate the breadth to connect the client, backend, data, and AI.</p>
+        </div>
+        <div class="capability-list">
+          <article class="capability-item capability-primary" data-reveal>
+            <div>
+              <span class="eyebrow" data-i18n="mobileLevel">01 / CORE COMMERCIAL EXPERTISE</span>
+              <h3 data-i18n="mobileTitle">Mobile engineering beyond the screen.</h3>
+              <p data-i18n="mobileCopy">Video playback, remote-first TV navigation, reservation flows, native integrations, and release delivery. The engineering that turns a polished interface into a complete product.</p>
+            </div>
+            <div>
+              <p class="capability-stack od-field"><span class="stack-label" data-i18n="mobileToolkit">CORE TOOLKIT</span><span class="stack-values">Flutter · Dart · Android · iOS · Android TV · BLoC · Riverpod · Firebase</span></p>
+              <div class="capability-evidence"><a href="#streaming" data-i18n="mobileEvidenceStreaming">Streaming &amp; Android TV ↗</a><a href="#leclick" data-i18n="mobileEvidenceLeclick">Discovery &amp; reservations ↗</a></div>
+            </div>
+          </article>
+          <article class="capability-item" data-reveal>
+            <span class="eyebrow" data-i18n="backendLevel">02 / END-TO-END PRODUCT OWNERSHIP</span>
+            <h3 data-i18n="backendTitle">Own the system behind the product.</h3>
+            <p data-i18n="backendCopy">APIs, data models, background jobs, and persistence — built alongside the clients that consume them. From architecture to a connected user journey.</p>
+            <p class="capability-stack od-field"><span class="stack-label" data-i18n="mobileToolkit">CORE TOOLKIT</span><span class="stack-values">Python · Django · Django REST Framework · Celery · PostgreSQL</span></p>
+            <div class="capability-evidence"><a href="#medstory" data-i18n="backendEvidence">MedStory backend ↗</a><a href="#crypto" data-i18n="cryptoEvidence">Crypto data pipeline ↗</a></div>
+          </article>
+          <article class="capability-item" data-reveal>
+            <span class="eyebrow" data-i18n="dataLevel">03 / APPLIED AI &amp; DATA</span>
+            <h3 data-i18n="dataTitle">Make AI useful. Keep it traceable.</h3>
+            <p data-i18n="dataCopy">OCR and speech-to-text turn raw input into structured, source-linked records. Sentiment processing adds context to collected data.</p>
+            <p class="capability-stack od-field"><span class="stack-label" data-i18n="dataToolkit">METHODS &amp; TOOLS</span><span class="stack-values" data-i18n="dataStack">OCR · Speech-to-text · LLM integrations · Structured outputs · Sentiment analysis</span></p>
+            <div class="capability-evidence"><a href="#medstory" data-i18n="dataEvidence">MedStory AI workflow ↗</a><a href="#crypto" data-i18n="cryptoEvidence">Crypto data pipeline ↗</a></div>
+          </article>
+          <div class="capability-support" data-reveal>
+            <span class="eyebrow" data-i18n="breadthLabel">SUPPORTING BREADTH</span>
+            <div><h3 data-i18n="webTitle">Web &amp; API integrations</h3><p data-i18n="webCopy">JavaScript, TypeScript, React, Next.js, and Tailwind CSS for browser interfaces. Node.js, Express, REST, GraphQL, and WebSockets for integrations.</p></div>
+            <div><h3 data-i18n="infraTitle">Delivery &amp; data foundations</h3><p data-i18n="infraCopy">Docker, GitHub Actions, CI/CD, Firebase, and AWS. PostgreSQL, SQLite, and Redis across storage and deployment workflows.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="about" id="about">
+      <div class="wrap about-grid">
+        <div data-reveal><span class="eyebrow" data-i18n="aboutEyebrow">ABOUT / EXPERIENCE</span><h2 class="about-statement" data-i18n="aboutStatement">Handle the complexity. Deliver the clarity.</h2></div>
+        <div data-reveal><p class="about-copy" data-i18n="aboutOne">I'm a software engineer based in Astana, Kazakhstan. I work where product thinking meets difficult technical problems — from video players and reservation flows to backend systems and AI integrations.</p><p class="about-copy" data-i18n="aboutTwo">I get into the details, connect the parts, and carry decisions through to working software. What happens beyond the demo matters to me.</p><div class="experience-list"><div class="experience-row"><span>2022—2026</span><strong data-i18n="experienceYears">Commercial engineering, including mobile products at Gabumas Ltd</strong></div><div class="experience-row"><span>2023</span><strong data-i18n="education">Xiamen University — B.Sc. in Digital Media Technology</strong></div></div></div>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <span class="eyebrow" data-i18n="contactEyebrow">THE NEXT PRODUCT</span>
+        <h2 class="contact-title" data-i18n="contactTitle">A hard problem? Let's build through it.</h2>
+        <p class="contact-lead" data-i18n="contactLead">Open to worldwide remote roles, on-site positions in Astana, contracts, and freelance projects.</p>
+        <a class="contact-action" href="mailto:alibekkapan@gmail.com?subject=Let's%20build%20something"><span data-i18n="contactAction">Start a conversation</span><span class="arrow" aria-hidden="true">↗</span></a>
+        <div class="contact-links"><a href="mailto:alibekkapan@gmail.com">alibekkapan@gmail.com</a><a href="https://github.com/Lemilli" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/alibek-k-b700351b7/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><span data-i18n="contactLocation">Astana, Kazakhstan</span></div>
+        <footer class="site-footer"><span>© 2026 ALIBEK KAPAN</span><span data-i18n="footerNote">Thought through. Built through.</span><a href="#top" data-i18n="backToTop">BACK TO TOP ↑</a></footer>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
