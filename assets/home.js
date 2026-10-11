@@ -1,3 +1,5 @@
+import { createNavigation } from './navigation.js';
+
 const russian = {
   skipContent:'К содержанию',navLabel:'Основная навигация',languageLabel:'Язык',topLabel:'Алибек Капан — в начало',impactLabel:'Масштаб продуктов',orbitLabel:'Технологии и связанные проекты',medstoryGallery:'Скриншоты MedStory: от добавления записи до подготовки к визиту',leclickGallery:'Скриншоты LeClick: поиск, карта и бронирования',backToTop:'В НАЧАЛО ↑',
   navWork:'Проекты',navCapabilities:'Экспертиза',navAbout:'Обо мне',navContact:'Контакты',availability:'Открыт к предложениям',menuOpen:'Открыть меню',menuClose:'Закрыть меню',
@@ -46,6 +48,7 @@ const motionLabel = document.querySelector('[data-orbit-motion-label]');
 const menuToggle = document.querySelector('[data-menu-toggle]');
 const siteNav = document.querySelector('[data-site-nav]');
 const siteHeader = document.querySelector('.site-header');
+const navigation = createNavigation(window,document,siteHeader);
 function updateHeaderHeight() {
   document.documentElement.style.setProperty('--header-height',`${siteHeader.getBoundingClientRect().height}px`);
 }
@@ -103,13 +106,7 @@ function updateMotionLabel() {
 }
 
 function setLanguage(language, preservePosition = false) {
-  const headerEdge = document.querySelector('.site-header').getBoundingClientRect().bottom + 24;
-  const candidates = [...document.querySelectorAll('main section[id],main article[id]')];
-  const anchor = preservePosition ? candidates.filter(element => {
-    const bounds = element.getBoundingClientRect();
-    return bounds.top <= headerEdge && bounds.bottom > headerEdge;
-  }).pop() : null;
-  const anchorTop = anchor ? anchor.getBoundingClientRect().top : 0;
+  const position = preservePosition ? navigation.capture() : null;
   currentLanguage = language === 'ru' ? 'ru' : 'en';
   document.documentElement.lang = currentLanguage;
   for (const [element,english] of i18nText) element.textContent = currentLanguage === 'ru' ? (russian[element.dataset.i18n] || english) : english;
@@ -119,7 +116,8 @@ function setLanguage(language, preservePosition = false) {
   updateMenuLabel();
   paintOrbit();
   updateMotionLabel();
-  if (anchor) requestAnimationFrame(() => window.scrollBy({top:anchor.getBoundingClientRect().top-anchorTop,behavior:'instant'}));
+  updateHeaderHeight();
+  if (preservePosition) navigation.restore(position);
   try { localStorage.setItem('alibek-portfolio-language',currentLanguage); } catch (_) {}
 }
 
@@ -183,7 +181,12 @@ function selectTechnology(node) {
   }
 }
 
-for (const button of languageButtons) button.addEventListener('click',() => setLanguage(button.dataset.lang,true));
+for (const button of languageButtons) button.addEventListener('click',() => {
+  setLanguage(button.dataset.lang,true);
+  const url = new URL(window.location.href);
+  url.searchParams.set('lang',currentLanguage);
+  window.history.replaceState(window.history.state,'',url);
+});
 for (const [index,node] of orbitNodes.entries()) {
   node.addEventListener('click',() => selectTechnology(node));
   node.addEventListener('keydown',event => {
@@ -260,9 +263,18 @@ if (menuToggle && siteNav) {
   });
 }
 
-let storedLanguage = 'en';
-try { storedLanguage = localStorage.getItem('alibek-portfolio-language') || 'en'; } catch (_) {}
-setLanguage(storedLanguage);
+function languageFromLocation() {
+  const language = new URL(window.location.href).searchParams.get('lang');
+  if (language === 'ru' || language === 'en') return language;
+  try { return localStorage.getItem('alibek-portfolio-language') || 'en'; } catch (_) { return 'en'; }
+}
+setLanguage(languageFromLocation());
+navigation.navigate(window.location.hash);
+window.addEventListener('popstate',() => {
+  setLanguage(languageFromLocation());
+  navigation.navigate(window.location.hash);
+});
+window.addEventListener('hashchange',() => navigation.navigate(window.location.hash));
 document.documentElement.classList.add('has-js');
 const reveals = [...document.querySelectorAll('[data-reveal]')];
 if (!motionPreference.matches && 'IntersectionObserver' in window) {

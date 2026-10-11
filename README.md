@@ -22,11 +22,23 @@ npm run preview
 
 Deploy the contents of `dist/` to any static web host. Fonts and images are bundled; the site needs no backend or external CDN.
 
+## Language links
+
+Use `?lang=ru` to open directly in Russian or `?lang=en` for English. Combine this with any section anchor, for example:
+
+- Russian: https://lemilli.github.io/?lang=ru#contact
+- English: https://lemilli.github.io/?lang=en#contact
+
+An explicit supported language in the URL takes priority over the saved preference. Without one, the site uses the saved language (English on a first visit). Switching languages updates the URL while preserving the section anchor and other query parameters, so the current link can be shared.
+
+Section navigation recalculates the destination after translation, font loading, image layout changes, and resizing. Switching languages keeps the current section or visible reading position. Manual scrolling cancels pending alignment, and clicking the same section link again returns to its start.
+
 ## Edit
 
 - `index.html`: English content, sections, images, and contact links.
 - `assets/home.css`: design tokens, layout, and responsive styles.
 - `assets/base.css`: bundled fonts, resets, and shared accessibility styles.
 - `assets/home.js`: Russian translations, language persistence, navigation, and orbit interactions.
+- `assets/navigation.js`: section scrolling, layout correction, and reading-position preservation.
 
 The export's handoff mentions three concept pages absent from the supplied folder. This implementation uses the complete portfolio in `index.html` and does not create missing concept routes.

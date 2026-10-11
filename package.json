@@ -9,7 +9,7 @@
     "start": "node scripts/serve.mjs",
     "build": "node scripts/build.mjs",
     "preview": "node scripts/serve.mjs dist",
-    "check": "node --check assets/home.js && node scripts/check.mjs"
+    "check": "node --check assets/home.js && node --check assets/navigation.js && node scripts/check.mjs && node --test scripts/navigation.test.mjs"
   },
   "engines": { "node": ">=18" }
 }
