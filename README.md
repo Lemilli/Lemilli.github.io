@@ -22,6 +22,14 @@ npm run preview
 
 Deploy the contents of `dist/` to any static web host. Fonts and images are bundled; the site needs no backend or external CDN.
 
+## Font loading
+
+The three fonts used by the page (Unbounded, Manrope, and IBM Plex Mono) are preloaded before styles. Latin subsets are always needed; Cyrillic subsets are also preloaded when `?lang=ru` or the saved preference selects Russian. Unused font families are not preloaded.
+
+Web fonts use `font-display: optional`: fast and cached visits use the custom fonts, while slow first visits keep a stable local fallback for that page view instead of changing typography after text appears. Local fallback faces have adjusted sizes and vertical metrics to approximate the design. Initial viewport content appears immediately; entrance animations apply to content reached while scrolling. This also prevents a delayed app module from hiding text that has already appeared.
+
+Russian startup content becomes visible after its translation is applied, avoiding an English-to-Russian flash. If the app module fails to initialize, a three-second fail-safe exposes the static English page. With JavaScript disabled, the static English page is visible immediately.
+
 ## Images
 
 All 13 images use responsive WebP sources. The hero loads with high priority; project screenshots load lazily and decode asynchronously. Tiny previews embedded in `assets/image-previews.css` fill the reserved image area while the full image loads, including with JavaScript disabled. Explicit frame widths prevent lazy images from collapsing and moving nearby content.

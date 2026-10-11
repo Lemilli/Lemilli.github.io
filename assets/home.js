@@ -117,6 +117,8 @@ function setLanguage(language, preservePosition = false) {
   paintOrbit();
   updateMotionLabel();
   updateHeaderHeight();
+  clearTimeout(window.portfolioLanguageFallback);
+  document.documentElement.classList.remove('language-pending');
   if (preservePosition) navigation.restore(position);
   try { localStorage.setItem('alibek-portfolio-language',currentLanguage); } catch (_) {}
 }
@@ -275,8 +277,14 @@ window.addEventListener('popstate',() => {
   navigation.navigate(window.location.hash);
 });
 window.addEventListener('hashchange',() => navigation.navigate(window.location.hash));
-document.documentElement.classList.add('has-js');
 const reveals = [...document.querySelectorAll('[data-reveal]')];
+// Content already on screen must never paint, disappear, and then animate back in.
+// Keep entrance animations for content that enters the viewport while scrolling.
+for (const element of reveals) {
+  const bounds = element.getBoundingClientRect();
+  if (bounds.top < window.innerHeight && bounds.bottom > 0) element.classList.add('is-visible');
+}
+document.documentElement.classList.add('has-js');
 if (!motionPreference.matches && 'IntersectionObserver' in window) {
   const revealObserver = new IntersectionObserver(entries => {
     for (const entry of entries) if (entry.isIntersecting) {
@@ -284,7 +292,7 @@ if (!motionPreference.matches && 'IntersectionObserver' in window) {
       revealObserver.unobserve(entry.target);
     }
   },{rootMargin:'0px 0px -4% 0px',threshold:.03});
-  for (const element of reveals) revealObserver.observe(element);
+  for (const element of reveals) if (!element.classList.contains('is-visible')) revealObserver.observe(element);
 } else for (const element of reveals) element.classList.add('is-visible');
 
 if ('IntersectionObserver' in window && siteNav) {

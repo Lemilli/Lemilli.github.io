@@ -6,7 +6,38 @@
   <meta name="theme-color" content="#0d0618">
   <meta name="description" content="Alibek Kapan — software engineer in Astana. Commercial Flutter and Android TV expertise, full-stack product development, and AI integrations. Explore the engineering behind real products.">
   <title>Alibek Kapan — Software Engineer</title>
+  <link rel="preload" href="assets/fonts/unbounded-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/plex-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <script>
+    // Start the selected language's font requests before styles and the app module.
+    (() => {
+      let language = new URLSearchParams(location.search).get('lang');
+      if (language !== 'en' && language !== 'ru') {
+        try { language = localStorage.getItem('alibek-portfolio-language'); } catch (_) {}
+      }
+      document.documentElement.lang = language === 'ru' ? 'ru' : 'en';
+      if (language !== 'ru') return;
+      // English is the static HTML fallback. Reveal Russian after translation,
+      // with a fail-safe so unavailable JavaScript cannot leave content hidden.
+      document.documentElement.classList.add('language-pending');
+      window.portfolioLanguageFallback = setTimeout(() => {
+        document.documentElement.lang = 'en';
+        document.documentElement.classList.remove('language-pending');
+      }, 3000);
+      for (const family of ['unbounded', 'manrope', 'plex-mono']) {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'font';
+        link.type = 'font/woff2';
+        link.crossOrigin = 'anonymous';
+        link.href = `assets/fonts/${family}-cyrillic.woff2`;
+        document.head.append(link);
+      }
+    })();
+  </script>
   <style>
+    .language-pending body{visibility:hidden}
     /* OD-LAYOUT-PRIMITIVES v1 — structure only: display, flex/grid, overflow, wrapping, ratio.
        Put this @layer first; product CSS outside the layer always wins. */
     @layer od-layout {
